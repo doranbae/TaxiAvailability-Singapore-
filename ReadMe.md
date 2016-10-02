@@ -1,21 +1,20 @@
-Homework: Hadoop Distributed Sort with YARN and HDFS
+#Taxi-Availability in Singapore
 
-VM Provisioning
+####Background
+Last August, I was in Singapore with my husband on a four-day trip. On the second day, we visited Orchard Road, the holy grail of shopping all the luxury brands and amazying restaurants. After lunch, as we were supposed to meet up with a realtor, we decided to take a cab to the meeting point.
 
-Set up 3 VM instances on Softlayer: master, slave1, slave2.
+As it turned out, hailing for a cab was the hardest thing in Singapore. My husband stepped off the sidewalk and stuck his arm out and waved at empty cabs, but no one stoped for us. After 15 minutes, a kind driver told us that cabs cannot pull over the sidewalk, and instructed us to go to a proper taxi station. 
 
-Please add your public key while provisioning the VMs (slcli vs create ... --key KEYID) so that you can login from your client without a password.
+Little confused, but we followed his instruction. We walked 5 minutes to a taxi station and found 50 people in line waiting for a cab. 
+Well, when in Rome, do as the Romans do. So we waited in line for an hour. AN HOUR for a cab. Don't you think this was a little outrageous? So I decided to create a map with data of empty cabs' location in real time. 
 
-Get 2 CPUs, 4G of RAM, 1G private / public NICS and two disks: 25G and 100G local the idea is to use the 100G disk for HDFS data and the 25G disk for the OS and housekeeping.
+Well, if I had known about Grab then, I would have not been frustrated at all!
 
-For the master, you might do something like this:
+####Data Source
+https://www.mytransport.sg
 
-slcli vs create --datacenter=sjc01 --hostname=master --domain=mids --billing=hourly --key=<mykey> --cpu=2 --memory=4096 --disk=25 --disk=100 --network=1000 --os=CENTOS_LATEST_64
-VM Configuration
-
-Note: Instructions in this section are to be performed on each node unless otherwise stated.
-
-Hosts file
-
-Log into VMs (all 3 of them) and update /etc/hosts/ with each system's public IP addresses (note that it's preferred to use private IPs for this communication instead, but that complicates use of Hadoop's UIs. For this assignment, public IPs will do. Here's my hosts file:
-
+###taxiavail.py
+This connects to API to Singapore government's datamall. It downloads real-time location data of all the available cabs in Singapore. 
+It saves the result in JSON format.
+###savetotable.py
+This saves the result into dataframe and then save it to a txt file. 
