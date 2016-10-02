@@ -2,17 +2,16 @@ import numpy as numpy
 import pandas as pd
 import json
 
-def createTable():
+def saveTable():
 
 	#Save result to file
 	with open("taxi_availability.json","r") as outfile:
 
 		data = json.loads(outfile.read())
 
+		# Get only the values
 		valueList = data["value"]
 
-		#print valueList[3][u'Latitude']
-		#print valueList[0][u'Longitude']
 		lat,lng = [],[]
 		for location in valueList:
 			lat.append(location["Latitude"])
@@ -21,4 +20,4 @@ def createTable():
 		df.to_csv('output.txt')
 
 if __name__ =="__main__":
-	createTable()
+	saveTable()

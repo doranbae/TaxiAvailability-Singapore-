@@ -3,7 +3,7 @@ import urllib
 from urlparse import urlparse
 import httplib2 as http # External library
 
-def main():
+def getData():
 	#Authentification parameters
 	headers = { 'AccountKey' : 'xxxxxx', 'UniqueUserID': 'xxxxxxxx','accept':'application/json'} #Request results in json
 
@@ -38,5 +38,5 @@ def main():
 
 
 if __name__ =="__main__":
-	main()
+	getData()
 
