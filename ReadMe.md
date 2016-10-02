@@ -1,8 +1,5 @@
-Homework: Hadoop Distributed Sort with YARN and HDFS
+#Taxi Availability in Singapore
 
-VM Provisioning
-
-Set up 3 VM instances on Softlayer: master, slave1, slave2.
 
 Please add your public key while provisioning the VMs (slcli vs create ... --key KEYID) so that you can login from your client without a password.
 
