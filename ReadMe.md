@@ -1,18 +1,10 @@
-#Taxi Availability in Singapore
+#Taxi-Availability in Singapore
 
+####Background
+Last August, I was in Singapore with my husband on a four-day trip. On the second day, we visited Orchard Road, the holy grail of shopping all the luxury brands and amazying restaurants. After lunch, as we were supposed to meet up with a realtor, we decided to take a cab to the meeting point.
 
-Please add your public key while provisioning the VMs (slcli vs create ... --key KEYID) so that you can login from your client without a password.
+As it turned out, hailing for a cab was the hardest thing in Singapore. My husband stepped off the sidewalk and stuck his arm out and waved at empty cabs, but no one stoped for us. After 15 minutes, a kind driver told us that cabs cannot pull over the sidewalk, and instructed us to go to a proper taxi station. 
 
-Get 2 CPUs, 4G of RAM, 1G private / public NICS and two disks: 25G and 100G local the idea is to use the 100G disk for HDFS data and the 25G disk for the OS and housekeeping.
-
-For the master, you might do something like this:
-
-slcli vs create --datacenter=sjc01 --hostname=master --domain=mids --billing=hourly --key=<mykey> --cpu=2 --memory=4096 --disk=25 --disk=100 --network=1000 --os=CENTOS_LATEST_64
-VM Configuration
-
-Note: Instructions in this section are to be performed on each node unless otherwise stated.
-
-Hosts file
-
-Log into VMs (all 3 of them) and update /etc/hosts/ with each system's public IP addresses (note that it's preferred to use private IPs for this communication instead, but that complicates use of Hadoop's UIs. For this assignment, public IPs will do. Here's my hosts file:
+Little confused, but we followed his instruction. We walked 5 minutes to a taxi station and found 50 people in line waiting for a cab. 
+Well, when in Rome, do as the Romans do. So we waited in line for an hour. AN HOUR for a cab. 
 
